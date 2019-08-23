@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Export generator="Cache" version="25" zv="Cache for Windows (x86-64) 2018.1.2 (Build 309U_SU)" ts="2019-08-23 10:56:22">
+<Class name="emr.physician.Controller">
+<Super>%CSP.REST</Super>
+<TimeChanged>65247,71524.12603</TimeChanged>
+<TimeCreated>65247,68498.764621</TimeCreated>
+
+<Parameter name="CHARSET">
+<Default>utf-8</Default>
+</Parameter>
+
+<Parameter name="CONTENTTYPE">
+<Default>application/json</Default>
+</Parameter>
+
+<XData name="UrlMap">
+<XMLNamespace>http://www.intersystems.com/urlmap</XMLNamespace>
+<Data><![CDATA[
+<Routes>
+<Route Url="/prc/all" Method="GET" Call="emr.physician.Service:getAll"/>
+<Route Url="/prc/:id" Method="GET" Call="emr.physician.Service:getPhy"/>
+<Route Url="/prc/add" Method="POST" Call="emr.physician.Service:addPhy"/>
+<Route Url="/prc/upd/:id" Method="PUT" Call="emr.physician.Service:updPhy"/>
+<Route Url="/prc/del/:id" Method="DELETE" Call="emr.physician.Service:delPhy"/>
+</Routes>
+]]></Data>
+</XData>
+</Class>
+</Export>

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Export generator="Cache" version="25" zv="Cache for Windows (x86-64) 2018.1.2 (Build 309U_SU)" ts="2019-08-23 10:58:57">
+<Class name="emr.physician.Dao">
+<Super>%RegisteredObject</Super>
+<TimeChanged>65247,76333.80825</TimeChanged>
+<TimeCreated>65247,70225.109718</TimeCreated>
+
+<Method name="all">
+<ClassMethod>1</ClassMethod>
+<Implementation><![CDATA[
+	f i=1:1{
+	 	s ob=##Class(emr.physician.Model).%OpenId(i)
+	    q:'$d(ob)
+	 	s n(i)=ob.Name
+	 	s t(i)=ob.Telecom
+	 	s a(i)=ob.Active
+	 	s g(i)=ob.Gender
+	 	s b(i)=ob.BirthDate
+	 	s ad(i)=ob.Address
+	 	s q(i)=ob.Qualification
+	 	s oc={
+		 	"Name":(n(i)),
+		 	"Telecom":(t(i)),
+		 	"Active":(a(i)),
+		 	"Gender":(g(i)),
+		 	"BirthDate":(b(i)),
+		 	"Address":(ad(i)),
+		 	"Qualification":(q(i))
+		 	} 
+		 	w oc.%ToJSON()
+	 	}
+]]></Implementation>
+</Method>
+
+<Method name="get">
+<ClassMethod>1</ClassMethod>
+<FormalSpec>id</FormalSpec>
+<Implementation><![CDATA[
+		s ob=##Class(emr.physician.Model).%OpenId(id)
+	s n=ob.Name
+	s t=ob.Telecom
+	s a=ob.Active
+	s g=ob.Gender
+	s b=ob.BirthDate
+	s ad=ob.Address
+	s q=ob.Qualification
+	s od={
+		 	"Name":(n),
+		 	"Telecom":(t),
+		 	"Active":(a),
+		 	"Gender":(g),
+		 	"BirthDate":(b),
+		 	"Address":(ad),
+		 	"Qualification":(q)
+		}
+		w od.%ToJSON()
+	q
+]]></Implementation>
+</Method>
+
+<Method name="add">
+<ClassMethod>1</ClassMethod>
+<Implementation><![CDATA[
+	s ob=##Class(emr.physician.Model).getJSON()
+	s obj=##Class(emr.physician.Model).%New()
+	s obj.Name=ob.Name
+	s obj.Telecom=ob.Telecom
+	s obj.Active=ob.Active
+	s obj.Gender=ob.Gender
+	s obj.BirthDate=ob.BirthDate
+	s obj.Address=ob.Address
+	s obj.Qualification=ob.Qualification
+	q obj.%Save()
+]]></Implementation>
+</Method>
+
+<Method name="upd">
+<ClassMethod>1</ClassMethod>
+<FormalSpec>id</FormalSpec>
+<Implementation><![CDATA[
+	s ob=##Class(emr.physician.Model).getJSON()
+	s obj=##Class(emr.physician.Model).%OpenId(id)
+	s obj.Name=ob.Name
+	s obj.Telecom=ob.Telecom
+	s obj.Active=ob.Active
+	s obj.Gender=ob.Gender
+	s obj.BirthDate=ob.BirthDate
+	s obj.Address=ob.Address
+	s obj.Qualification=ob.Qualification
+	q obj.%Save()
+]]></Implementation>
+</Method>
+
+<Method name="del">
+<ClassMethod>1</ClassMethod>
+<FormalSpec>id</FormalSpec>
+<Implementation><![CDATA[
+	d ##Class(emr.physician.Model).%DeleteId(id)
+	q
+]]></Implementation>
+</Method>
+</Class>
+</Export>

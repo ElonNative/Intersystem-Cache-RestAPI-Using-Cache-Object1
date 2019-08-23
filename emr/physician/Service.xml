@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Export generator="Cache" version="25" zv="Cache for Windows (x86-64) 2018.1.2 (Build 309U_SU)" ts="2019-08-23 10:59:14">
+<Class name="emr.physician.Service">
+<Super>%RegisteredObject</Super>
+<TimeChanged>65247,73553.119882</TimeChanged>
+<TimeCreated>65247,69436.605654</TimeCreated>
+
+<Method name="getAll">
+<ClassMethod>1</ClassMethod>
+<Implementation><![CDATA[
+	d ##Class(emr.physician.Dao).all()
+	q
+]]></Implementation>
+</Method>
+
+<Method name="getPhy">
+<ClassMethod>1</ClassMethod>
+<FormalSpec>id</FormalSpec>
+<Implementation><![CDATA[
+	d ##Class(emr.physician.Dao).get(id)
+	q
+]]></Implementation>
+</Method>
+
+<Method name="addPhy">
+<ClassMethod>1</ClassMethod>
+<Implementation><![CDATA[
+	d ##Class(emr.physician.Dao).add()
+	q
+]]></Implementation>
+</Method>
+
+<Method name="updPhy">
+<ClassMethod>1</ClassMethod>
+<FormalSpec>id</FormalSpec>
+<Implementation><![CDATA[
+	d ##Class(emr.physician.Dao).upd(id)
+	q
+]]></Implementation>
+</Method>
+
+<Method name="delPhy">
+<ClassMethod>1</ClassMethod>
+<FormalSpec>id</FormalSpec>
+<Implementation><![CDATA[
+	d ##Class(emr.physician.Dao).del(id)
+	q
+]]></Implementation>
+</Method>
+</Class>
+</Export>

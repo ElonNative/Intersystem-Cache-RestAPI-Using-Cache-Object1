@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Export generator="Cache" version="25" zv="Cache for Windows (x86-64) 2018.1.2 (Build 309U_SU)" ts="2019-08-23 10:55:49">
+<Class name="emr.patient.Model">
+<Super>%Persistent</Super>
+<TimeChanged>65247,74210.257348</TimeChanged>
+<TimeCreated>65247,68061.083083</TimeCreated>
+
+<Property name="Name">
+<Type>%String</Type>
+<Required>1</Required>
+</Property>
+
+<Property name="Telecom">
+<Type>%Numeric</Type>
+<Required>1</Required>
+</Property>
+
+<Property name="Active">
+<Type>%Boolean</Type>
+<Required>1</Required>
+</Property>
+
+<Property name="Gender">
+<Type>%String</Type>
+<Required>1</Required>
+</Property>
+
+<Property name="BirthDate">
+<Type>%String</Type>
+<Required>1</Required>
+</Property>
+
+<Property name="Address">
+<Type>%String</Type>
+<Required>1</Required>
+</Property>
+
+<Property name="MartialStatus">
+<Type>%String</Type>
+<Required>1</Required>
+</Property>
+
+<Property name="ContactPerson">
+<Type>%String</Type>
+<Required>1</Required>
+</Property>
+
+<Property name="GeneralPractitioner">
+<Type>%String</Type>
+<Required>1</Required>
+</Property>
+
+<Property name="ManagingOrganisation">
+<Type>%String</Type>
+<Required>1</Required>
+</Property>
+
+<Method name="getJSON">
+<ClassMethod>1</ClassMethod>
+<ReturnType>%DynamicObject</ReturnType>
+<Implementation><![CDATA[
+	s ot=##Class(%DynamicObject).%FromJSON(%request.Content)
+	return ot
+]]></Implementation>
+</Method>
+
+<Storage name="Default">
+<Type>%Library.CacheStorage</Type>
+<DataLocation>^emr.patient.ModelD</DataLocation>
+<DefaultData>ModelDefaultData</DefaultData>
+<IdLocation>^emr.patient.ModelD</IdLocation>
+<IndexLocation>^emr.patient.ModelI</IndexLocation>
+<StreamLocation>^emr.patient.ModelS</StreamLocation>
+<Data name="ModelDefaultData">
+<Value name="1">
+<Value>%%CLASSNAME</Value>
+</Value>
+<Value name="2">
+<Value>name</Value>
+</Value>
+<Value name="3">
+<Value>telecom</Value>
+</Value>
+<Value name="4">
+<Value>active</Value>
+</Value>
+<Value name="5">
+<Value>gender</Value>
+</Value>
+<Value name="6">
+<Value>birthDate</Value>
+</Value>
+<Value name="7">
+<Value>address</Value>
+</Value>
+<Value name="8">
+<Value>martialStatus</Value>
+</Value>
+<Value name="9">
+<Value>contactPerson</Value>
+</Value>
+<Value name="10">
+<Value>generalPractitioner</Value>
+</Value>
+<Value name="11">
+<Value>managingOrganisation</Value>
+</Value>
+<Value name="12">
+<Value>Name</Value>
+</Value>
+<Value name="13">
+<Value>Telecom</Value>
+</Value>
+<Value name="14">
+<Value>Active</Value>
+</Value>
+<Value name="15">
+<Value>Gender</Value>
+</Value>
+<Value name="16">
+<Value>BirthDate</Value>
+</Value>
+<Value name="17">
+<Value>Address</Value>
+</Value>
+<Value name="18">
+<Value>MartialStatus</Value>
+</Value>
+<Value name="19">
+<Value>ContactPerson</Value>
+</Value>
+<Value name="20">
+<Value>GeneralPractitioner</Value>
+</Value>
+<Value name="21">
+<Value>ManagingOrganisation</Value>
+</Value>
+</Data>
+</Storage>
+</Class>
+</Export>

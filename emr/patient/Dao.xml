@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Export generator="Cache" version="25" zv="Cache for Windows (x86-64) 2018.1.2 (Build 309U_SU)" ts="2019-08-23 10:55:41">
+<Class name="emr.patient.Dao">
+<Super>%RegisteredObject</Super>
+<TimeChanged>65247,75213.850232</TimeChanged>
+<TimeCreated>65247,74457.413743</TimeCreated>
+
+<Method name="all">
+<ClassMethod>1</ClassMethod>
+<Implementation><![CDATA[
+    	f i=1:1{
+	 	s ob=##Class(emr.patient.Model).%OpenId(i)
+	 	q:'$d(ob)
+	 	s n(i)=ob.Name
+	 	s t(i)=ob.Telecom
+	 	s a(i)=ob.Active
+	 	s g(i)=ob.Gender
+	 	s b(i)=ob.BirthDate
+	 	s ad(i)=ob.Address
+	 	s ms(i)=ob.MartialStatus
+	 	s c(i)=ob.ContactPerson
+	 	s gp(i)=ob.GeneralPractitioner
+	 	s mo(i)=ob.ManagingOrganisation
+	 	
+	 	s oc={
+		 	"Name":(n(i)),
+		 	"Telecom":(t(i)),
+		 	"Active":(a(i)),
+		 	"Gender":(g(i)),
+		 	"BirthDate":(b(i)),
+		 	"Address":(ad(i)),
+		 	"MartialStatus":(ms(i)),
+		 	"ContactPerson":(c(i)),
+		 	"GeneralPractitioner":(gp(i)),
+		 	"ManagingOrganisation":(mo(i))
+		 	} 
+		 	w oc.%ToJSON()	
+ 	}
+]]></Implementation>
+</Method>
+
+<Method name="get">
+<ClassMethod>1</ClassMethod>
+<FormalSpec>id</FormalSpec>
+<Implementation><![CDATA[
+ 
+	s ob=##Class(emr.patient.Model).%OpenId(id)
+	s n=ob.Name
+	s t=ob.Telecom
+	s a=ob.Active
+	s g=ob.Gender
+	s b=ob.BirthDate
+	s ad=ob.Address
+	s ms=ob.MartialStatus
+	s c=ob.ContactPerson
+	s gp=ob.GeneralPractitioner
+	s mo=ob.ManagingOrganisation
+	s od={
+		 	"Name":(n),
+		 	"Telecom":(t),
+		 	"Active":(a),
+		 	"Gender":(g),
+		 	"BirthDate":(b),
+		 	"Address":(ad),
+		 	"MartialStatus":(ms),
+		 	"ContactPerson":(c),
+		 	"GeneralPractitioner":(gp),
+		 	"ManagingOrganisation":(mo)
+		}
+		w od.%ToJSON()
+	q
+]]></Implementation>
+</Method>
+
+<Method name="add">
+<ClassMethod>1</ClassMethod>
+<Implementation><![CDATA[
+	s ob=##Class(emr.patient.Model).getJSON()
+	s obj=##Class(emr.patient.Model).%New()
+	s obj.Name=ob.Name
+	s obj.Telecom=ob.Telecom
+	s obj.Active=ob.Active
+	s obj.Gender=ob.Gender
+	s obj.BirthDate=ob.BirthDate
+	s obj.Address=ob.Address
+	s obj.MartialStatus=ob.MartialStatus
+	s obj.ContactPerson=ob.ContactPerson
+	s obj.GeneralPractitioner=ob.GeneralPractitioner
+	s obj.ManagingOrganisation=ob.ManagingOrganisation
+	q obj.%Save()
+]]></Implementation>
+</Method>
+
+<Method name="upd">
+<ClassMethod>1</ClassMethod>
+<FormalSpec>id</FormalSpec>
+<Implementation><![CDATA[
+	
+	s ob=##Class(emr.patient.Model).getJSON()
+	s obj=##Class(emr.patient.Model).%OpenId(id)
+	s obj.Name=ob.Name
+	s obj.Telecom=ob.Telecom
+	s obj.Active=ob.Active
+	s obj.Gender=ob.Gender
+	s obj.BirthDate=ob.BirthDate
+	s obj.Address=ob.Address
+	s obj.MartialStatus=ob.MartialStatus
+	s obj.ContactPerson=ob.ContactPerson
+	s obj.GeneralPractitioner=ob.GeneralPractitioner
+	s obj.ManagingOrganisation=ob.ManagingOrganisation
+	q obj.%Save()
+]]></Implementation>
+</Method>
+
+<Method name="del">
+<ClassMethod>1</ClassMethod>
+<FormalSpec>id</FormalSpec>
+<Implementation><![CDATA[
+	d ##Class(emr.patient.Model).%DeleteId(id)
+	q
+]]></Implementation>
+</Method>
+</Class>
+</Export>

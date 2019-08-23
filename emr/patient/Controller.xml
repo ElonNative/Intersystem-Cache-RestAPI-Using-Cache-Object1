@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Export generator="Cache" version="25" zv="Cache for Windows (x86-64) 2018.1.2 (Build 309U_SU)" ts="2019-08-23 10:55:26">
+<Class name="emr.patient.Controller">
+<Super>%CSP.REST</Super>
+<TimeChanged>65247,76752.323616</TimeChanged>
+<TimeCreated>65247,76235.957922</TimeCreated>
+
+<Parameter name="CHARSET">
+<Default>utf-8</Default>
+</Parameter>
+
+<Parameter name="CONTENTTYPE">
+<Default>application/json</Default>
+</Parameter>
+
+<XData name="UrlMap">
+<XMLNamespace>http://www.intersystems.com/urlmap</XMLNamespace>
+<Data><![CDATA[
+<Routes>
+<Route Url="/pat/all" Method="GET" Call="emr.patient.Service:getAll"/>
+<Route Url="/pat/:id" Method="GET" Call="emr.patient.Service:getPat"/>
+<Route Url="/pat/add" Method="POST" Call="emr.patient.Service:addPat"/>
+<Route Url="/pat/upd/:id" Method="PUT" Call="emr.patient.Service:updPat"/>
+<Route Url="/pat/del/:id" Method="DELETE" Call="emr.patient.Service:delPat"/>
+</Routes>
+]]></Data>
+</XData>
+</Class>
+</Export>

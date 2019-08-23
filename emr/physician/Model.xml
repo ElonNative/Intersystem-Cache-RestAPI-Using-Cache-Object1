@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Export generator="Cache" version="25" zv="Cache for Windows (x86-64) 2018.1.2 (Build 309U_SU)" ts="2019-08-23 10:59:03">
+<Class name="emr.physician.Model">
+<Super>%Persistent</Super>
+<TimeChanged>65247,72848.342147</TimeChanged>
+<TimeCreated>65247,68257.003048</TimeCreated>
+
+<Property name="Name">
+<Type>%String</Type>
+<Required>1</Required>
+</Property>
+
+<Property name="Telecom">
+<Type>%Numeric</Type>
+<Required>1</Required>
+</Property>
+
+<Property name="Address">
+<Type>%String</Type>
+<Required>1</Required>
+</Property>
+
+<Property name="Active">
+<Type>%Boolean</Type>
+<Required>1</Required>
+</Property>
+
+<Property name="Gender">
+<Type>%String</Type>
+<Required>1</Required>
+</Property>
+
+<Property name="BirthDate">
+<Type>%String</Type>
+<Required>1</Required>
+</Property>
+
+<Property name="Qualification">
+<Type>%String</Type>
+<Required>1</Required>
+</Property>
+
+<Method name="getJSON">
+<ClassMethod>1</ClassMethod>
+<ReturnType>%DynamicObject</ReturnType>
+<Implementation><![CDATA[
+	s ot=##Class(%DynamicObject).%FromJSON(%request.Content)
+	return ot
+]]></Implementation>
+</Method>
+
+<Storage name="Default">
+<Type>%Library.CacheStorage</Type>
+<DataLocation>^emr.physician.ModelD</DataLocation>
+<DefaultData>ModelDefaultData</DefaultData>
+<IdLocation>^emr.physician.ModelD</IdLocation>
+<IndexLocation>^emr.physician.ModelI</IndexLocation>
+<StreamLocation>^emr.physician.ModelS</StreamLocation>
+<Data name="ModelDefaultData">
+<Value name="1">
+<Value>%%CLASSNAME</Value>
+</Value>
+<Value name="2">
+<Value>Name</Value>
+</Value>
+<Value name="3">
+<Value>Telecom</Value>
+</Value>
+<Value name="4">
+<Value>Address</Value>
+</Value>
+<Value name="5">
+<Value>Active</Value>
+</Value>
+<Value name="6">
+<Value>Gender</Value>
+</Value>
+<Value name="7">
+<Value>BirthDate</Value>
+</Value>
+<Value name="8">
+<Value>Qualification</Value>
+</Value>
+</Data>
+</Storage>
+</Class>
+</Export>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Export generator="Cache" version="25" zv="Cache for Windows (x86-64) 2018.1.2 (Build 309U_SU)" ts="2019-08-23 10:55:55">
+<Class name="emr.patient.Service">
+<Super>%RegisteredObject</Super>
+<TimeChanged>65247,76730.846508</TimeChanged>
+<TimeCreated>65247,74342.89683</TimeCreated>
+
+<Method name="getAll">
+<ClassMethod>1</ClassMethod>
+<Implementation><![CDATA[
+	d ##Class(emr.patient.Dao).all()
+	q
+]]></Implementation>
+</Method>
+
+<Method name="getPat">
+<ClassMethod>1</ClassMethod>
+<FormalSpec>id</FormalSpec>
+<Implementation><![CDATA[
+	d ##Class(emr.patient.Dao).get(id)
+	q
+]]></Implementation>
+</Method>
+
+<Method name="addPat">
+<ClassMethod>1</ClassMethod>
+<Implementation><![CDATA[
+	d ##Class(emr.patient.Dao).add()
+	q
+]]></Implementation>
+</Method>
+
+<Method name="updPat">
+<ClassMethod>1</ClassMethod>
+<FormalSpec>id</FormalSpec>
+<Implementation><![CDATA[
+	d ##Class(emr.patient.Dao).upd(id)
+	q
+]]></Implementation>
+</Method>
+
+<Method name="delPat">
+<ClassMethod>1</ClassMethod>
+<FormalSpec>id</FormalSpec>
+<Implementation><![CDATA[
+	d ##Class(emr.patient.Dao).del(id)
+	q
+]]></Implementation>
+</Method>
+</Class>
+</Export>
